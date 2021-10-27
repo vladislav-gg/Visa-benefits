@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>To do list</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="content-wrapper">
+            <div class="title">
+                <h1>The list of VISA benefits::</h1>
+            </div>
+            <div id="add-wrapper" class="add-bar">
+                <h2>Add a benefit below</h2>
+                <input type="text" id="inputTitle" placeholder="Title...">
+                <input type="text" id="inputContent" placeholder="Content...">
+                <span onclick={newElement} class="addBtn">Add</span>
+
+                <ul id='list'>
+                    
+                </ul>
+            </div>
+              
+            <button class="collapsible" type='button'>Expand list</button>
+            <div class="content">
+                <p>Why my content is not showing up 
+                    Why my content is not showing up
+                    Why my content is not showing up
+                    Why my content is not showing up
+                    Why my content is not showing up
+                    Why my content is not showing up
+                    Why my content is not showing up
+                </p>
+            </div>
+        </div>
+        <script src="index.js" async defer></script>
+    </body>
+</html>
