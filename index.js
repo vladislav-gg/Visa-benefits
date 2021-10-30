@@ -18,19 +18,31 @@ for (i=0; i<col.length; i++){
 
 function newItem() {
     console.log('Inside newItem');
-    let item = document.getElementById('inputContent').value;
-    console.log (item);
+    let content = document.getElementById('inputContent').value;
+    let title = document.getElementById('inputTitle').value;
+    console.log (content);
+    console.log(title);
 
+    const collapsibleButtn = document.getElementById('btnText');
+    const createButtn = document.createElement('btnText');
 
     const ul = document.getElementById('list');
 
     const li = document.createElement('li');
 
-    li.appendChild(document.createTextNode('-' + item));
+    li.appendChild(document.createTextNode('-' + content));
 
+    
     ul.appendChild(li);
-
+    
+    collapsibleButtn.appendChild(document.createTextNode(title));
+    
+    ul.appendChild(document.createElement('button'));
+   
+   
+   
     document.getElementById('inputContent').value = "";
+    document.getElementById('inputTitle').value = "";
 
     li.onclick=removeItem;
 };
