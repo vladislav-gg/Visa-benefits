@@ -13,38 +13,36 @@ for (i=0; i<col.length; i++){
     });
 }
 
-
-    
-
 function newItem() {
     console.log('Inside newItem');
     let content = document.getElementById('inputContent').value;
     let title = document.getElementById('inputTitle').value;
     console.log (content);
     console.log(title);
-
+    
     const collapsibleButtn = document.getElementById('btnText');
-    const createButtn = document.createElement('btnText');
+    const createButtn = document.createElement('button');
+    
+    const wrapper = document.querySelector('element-wrapper')
 
     const ul = document.getElementById('list');
-
+    
     const li = document.createElement('li');
-
-    li.appendChild(document.createTextNode('-' + content));
-
+    
+    li.appendChild(document.createTextNode(content));
+    
     
     ul.appendChild(li);
     
     collapsibleButtn.appendChild(document.createTextNode(title));
     
-    ul.appendChild(document.createElement('button'));
-   
-   
-   
+    wrapper.appendChild(createButtn)
+    
     document.getElementById('inputContent').value = "";
     document.getElementById('inputTitle').value = "";
-
+    
     li.onclick=removeItem;
+    
 };
 
 document.body.onkeyup = function(e){
@@ -58,3 +56,8 @@ document.body.onkeyup = function(e){
 function removeItem (e){
     e.target.remove()
 }
+// if (content ===''){
+//     alert('You must enter content ')
+// }else if (title ===''){
+//     alert('You must enter title')
+// }
