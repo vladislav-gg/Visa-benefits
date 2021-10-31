@@ -14,30 +14,21 @@ for (i=0; i<col.length; i++){
 }
 
 function newItem() {
-    console.log('Inside newItem');
     let content = document.getElementById('inputContent').value;
     let title = document.getElementById('inputTitle').value;
-    console.log (content);
-    console.log(title);
-    
+    const wrapper = document.querySelector('.element-wrapper')
     const collapsibleButtn = document.getElementById('btnText');
     const createButtn = document.createElement('button');
-    
-    const wrapper = document.querySelector('element-wrapper')
-
     const ul = document.getElementById('list');
-    
     const li = document.createElement('li');
     
+
+
     li.appendChild(document.createTextNode(content));
-    
-    
     ul.appendChild(li);
     
-    collapsibleButtn.appendChild(document.createTextNode(title));
-    
-    wrapper.appendChild(createButtn)
-    
+    collapsibleButtn.innerText(title);
+        
     document.getElementById('inputContent').value = "";
     document.getElementById('inputTitle').value = "";
     
