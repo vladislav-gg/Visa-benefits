@@ -18,16 +18,18 @@ function newItem() {
     let title = document.getElementById('inputTitle').value;
     const wrapper = document.querySelector('.element-wrapper')
     const collapsibleButtn = document.getElementById('btnText');
-    const createButtn = document.createElement('button');
     const ul = document.getElementById('list');
-    const li = document.createElement('li');
     
-
-
+    
+    const li = document.createElement('li');
+    const createButtn = document.createElement('button');
+    
+    wrapper.appendChild(createButtn);
+    
     li.appendChild(document.createTextNode(content));
     ul.appendChild(li);
     
-    collapsibleButtn.innerText(title);
+    collapsibleButtn.appendChild(document.createTextNode(title));
         
     document.getElementById('inputContent').value = "";
     document.getElementById('inputTitle').value = "";
