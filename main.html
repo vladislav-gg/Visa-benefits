@@ -21,19 +21,17 @@
             <div class="title">
                 <h1>The list of VISA benefits::</h1>
             </div>
-            <div id="add-wrapper" class="add-bar">
+            <div class="add-bar">
                 <h2>Add a benefit below</h2>
                 <input type="text" id="inputTitle" placeholder="Title...">
                 <input type="text" id="inputContent" placeholder="Content...">
-                <span onclick={newItem} class="addBtn">Add</span>
+                <span onclick='newItem()' class="addBtn">Add</span>
             </div>
 
             <div class="element-wrapper">
-                <button class="collapsible" type='button'><span id='btnText'></span></button>
+                <button class="collapsible" type='button'></button>
                 <div class="content">
-                    <ul id='list'>
-                    
-                    </ul>
+                    <ul class='list'></ul>
                 </div>
             </div>
         </div>

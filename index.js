@@ -16,25 +16,37 @@ for (i=0; i<col.length; i++){
 function newItem() {
     let content = document.getElementById('inputContent').value;
     let title = document.getElementById('inputTitle').value;
-    const wrapper = document.querySelector('.element-wrapper')
-    const collapsibleButtn = document.getElementById('btnText');
-    const ul = document.getElementById('list');
+    // const wrapper = document.getElementsByClassName('element-wrapper')
+    // const collapsibleButtn = document.getElementsByClassName('btnText');
+    // const ul = document.getElementsByClassName('list');
+    // const collapsible = document.getElementsByClassName('collapsible');
+    // let titleText = document.createTextNode(content)
+    // let contentText = document.createTextNode(title);
+
+    const div = document.createElement('div')
+    div.setAttribute('class', 'container');
+
+    const button = document.createElement('button');
+    button.setAttribute('class', 'collapsible');
+
+    const span = document.createElement('span');
+    span.setAttribute('id', 'btnText');
+
     
+    div.appendChild(button);
+    button.appendChild(span);
+    span.appendChild(document.createTextNode(title));
+
+
     
-    const li = document.createElement('li');
-    const createButtn = document.createElement('button');
-    
-    wrapper.appendChild(createButtn);
-    
-    li.appendChild(document.createTextNode(content));
-    ul.appendChild(li);
-    
-    collapsibleButtn.appendChild(document.createTextNode(title));
-        
+    // create new task div
+
+
+
     document.getElementById('inputContent').value = "";
     document.getElementById('inputTitle').value = "";
     
-    li.onclick=removeItem;
+    // li.onclick=removeItem;
     
 };
 
