@@ -7,11 +7,17 @@
 
 
 
+.main-wrapper{
+    position: relative;
+}
+
+
 .content-wrapper{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+   margin-top: 3rem;
 
 }
 .collapsible{
@@ -67,6 +73,7 @@
 #inputContent{
     width: 60rem;
     height: 15em;
+    resize: both;
 }
 
 #inputTitle{
@@ -113,4 +120,58 @@ ul li.checked::before{
     transform: rotate(45deg);
     height: 0.9rem;
     width: 0.5rem;
+}
+
+
+.contentDiv{
+    font-size: 1rem;
+    color: black;
+    padding: 1rem;
+    background-color: #eee;
+
+}
+
+/* CSS */
+.addBtn {
+  align-items: center;
+  background: #FFFFFF;
+  border: 0 solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1A202C;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 10rem;
+  justify-content: center;
+  line-height: 24px;
+  overflow-wrap: break-word;
+  padding: 24px;
+  text-decoration: none;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+
+input::placeholder{
+    opacity: 40%;
+}
+
+input {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+}
+
+input:focus{
+    outline: none;
+
+
 }

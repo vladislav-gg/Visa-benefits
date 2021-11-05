@@ -8,11 +8,6 @@ function newItem() {
         alert('You must enter content ')
     }else{
         const wrapper = document.querySelector('.element-wrapper')
-        // const collapsibleButtn = document.getElementsByClassName('btnText');
-        // const ul = document.getElementsByClassName('list');
-        // const collapsible = document.getElementsByClassName('collapsible');
-        // let titleText = document.createTextNode(content)
-        // let contentText = document.createTextNode(title);
         const contentDiv = document.createElement('div');
         contentDiv.setAttribute('class', 'contentDiv');
     
