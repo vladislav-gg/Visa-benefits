@@ -65,3 +65,7 @@ document.body.onkeyup = function(e){
 function removeItem (e){
     e.target.remove()
 }
+
+
+// Editor for textarea
+CKEDITOR.replace( 'editor1' );

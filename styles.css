@@ -158,20 +158,29 @@ ul li.checked::before{
 }
 
 
-input::placeholder{
+input, textarea::placeholder{
     opacity: 40%;
 }
 
-input {
+input{
     padding: 1rem;
     margin: 0.5rem 0;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.15);
 
 }
+textarea {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+}
 
 input:focus{
     outline: none;
-
+}
+textarea:focus{
+    outline:none;
 
 }
