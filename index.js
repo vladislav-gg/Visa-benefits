@@ -10,7 +10,7 @@ function newItem() {
         const wrapper = document.querySelector('.element-wrapper')
         const contentDiv = document.createElement('div');
         contentDiv.setAttribute('class', 'contentDiv');
-    
+        
         const div = document.createElement('div');
         div.setAttribute('class', 'container');
         
@@ -21,6 +21,8 @@ function newItem() {
         span.setAttribute('class', 'btnText');
         
         // span.createTextNode(title)
+        localStorage.setItem('benefits', div);
+        localStorage.getItem(div)
         
         div.appendChild(button);
         button.appendChild(span);
@@ -51,6 +53,8 @@ function newItem() {
            });
         }
 
+
+
     }
 };
 
@@ -69,3 +73,18 @@ function removeItem (e){
 
 // Editor for textarea
 CKEDITOR.replace( 'editor1' );
+
+
+// Adding localStorage 
+
+function addToLocalStorage(div) {
+    localStorage.setItem('benefits', div);
+    // render them to screen
+    renderTodos(div);
+  }
+
+// get value from localStorage 
+
+function getFromLocalStorage() {
+    return localStorage.getItem('benefits');
+}
