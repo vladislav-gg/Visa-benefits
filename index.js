@@ -35,6 +35,8 @@ function newItem() {
         div.appendChild(contentDiv);
         // span.appendChild(document.createTextNode(title));
         
+        addToLocalStorage(title, content);
+
         document.getElementById('inputContent').value = "";
         document.getElementById('inputTitle').value = "";
         
@@ -72,19 +74,18 @@ function removeItem (e){
 
 
 // Editor for textarea
-CKEDITOR.replace( 'editor1' );
 
 
 // Adding localStorage 
 
-function addToLocalStorage(div) {
-    localStorage.setItem('benefits', div);
-    // render them to screen
-    renderTodos(div);
+function addToLocalStorage(title, content) {
+    localStorage.setItem(title, content);
   }
 
 // get value from localStorage 
+function getFromLocalStorage (title, content) {
+    localStorage.getItem(title,content);
+    
+    
 
-function getFromLocalStorage() {
-    return localStorage.getItem('benefits');
 }
