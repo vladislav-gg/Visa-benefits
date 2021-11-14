@@ -1,0 +1,22 @@
+{
+  "name": "visa-benefits",
+  "version": "1.0.0",
+  "description": "My attempt to create a list of all benefits in one place (specifically for my work)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladislav-gg/Visa-benefits.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladislav-gg/Visa-benefits/issues"
+  },
+  "homepage": "https://github.com/vladislav-gg/Visa-benefits#readme",
+  "dependencies": {
+    "mongodb": "^4.1.4"
+  }
+}

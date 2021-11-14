@@ -1,47 +1,42 @@
 
 function newItem() {
-    // li.onclick=removeItem;
     
     let content = document.getElementById('inputContent').value;
     let title = document.getElementById('inputTitle').value;
+    
+
     if (content ==='' || title === ''){
         alert('You must enter content ')
     }else{
+        // My elements and it's classes.
         const wrapper = document.querySelector('.element-wrapper')
         const contentDiv = document.createElement('div');
         contentDiv.setAttribute('class', 'contentDiv');
-        
         const div = document.createElement('div');
         div.setAttribute('class', 'container');
-        
         const button = document.createElement('button');
         button.setAttribute('class', 'collapsible');
-        
         const span = document.createElement('span');
         span.setAttribute('class', 'btnText');
         
-        // span.createTextNode(title)
-        localStorage.setItem('benefits', div);
-        localStorage.getItem(div)
-        
+        // Storing in LocalStorage 
+        storeLocal()
+
+        // Displaying on page
         div.appendChild(button);
         button.appendChild(span);
         span.innerText = title;
         
-        console.log(wrapper);
         wrapper.appendChild(div);
         
         contentDiv.innerText=content;
         div.appendChild(contentDiv);
-        // span.appendChild(document.createTextNode(title));
         
-        addToLocalStorage(title, content);
-
+        // Removing the input values after 'enter' key/add button.
         document.getElementById('inputContent').value = "";
         document.getElementById('inputTitle').value = "";
         
-        
-        
+        // Collapsible functionality
         let col = document.getElementsByClassName('collapsible');
         let i;
          for (i=0; i<col.length; i++){
@@ -54,9 +49,6 @@ function newItem() {
                }
            });
         }
-
-
-
     }
 };
 
@@ -73,19 +65,17 @@ function removeItem (e){
 }
 
 
-// Editor for textarea
 
+// Storing in LocalStorage
+function storeLocal(){
+    localStorage.setItem('title', title);
+    localStorage.setItem('content', content);
+};
 
-// Adding localStorage 
+// Getting Localstorage value
 
-function addToLocalStorage(title, content) {
-    localStorage.setItem(title, content);
-  }
-
-// get value from localStorage 
-function getFromLocalStorage (title, content) {
-    localStorage.getItem(title,content);
-    
+// function renderLocal(){
     
 
-}
+
+// }
