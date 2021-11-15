@@ -1,9 +1,12 @@
 
+
+
+
 function newItem() {
     
     let content = document.getElementById('inputContent').value;
     let title = document.getElementById('inputTitle').value;
-    
+    let benefits = [];
 
     if (content ==='' || title === ''){
         alert('You must enter content ')
@@ -20,7 +23,8 @@ function newItem() {
         span.setAttribute('class', 'btnText');
         
         // Storing in LocalStorage 
-        storeLocal()
+        storeLocal(title, content);
+        addToLocalSotrage();
 
         // Displaying on page
         div.appendChild(button);
@@ -29,7 +33,7 @@ function newItem() {
         
         wrapper.appendChild(div);
         
-        contentDiv.innerText=content;
+        contentDiv.innerText = content;
         div.appendChild(contentDiv);
         
         // Removing the input values after 'enter' key/add button.
@@ -39,16 +43,33 @@ function newItem() {
         // Collapsible functionality
         let col = document.getElementsByClassName('collapsible');
         let i;
-         for (i=0; i<col.length; i++){
-           col[i].addEventListener('click', function(){
-               let content = this.nextSibling; 
-               if (content.style.display === "block") {
-                   content.style.display = "none";
-                 } else {
-                   content.style.display = "block";
-               }
-           });
+        for (i=0; i<col.length; i++){
+            col[i].addEventListener('click', function(){
+                let content = this.nextSibling; 
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         }
+
+        function storeLocal(title, content){
+            const myBenefits = {
+                id: Date.now(),
+                title: title,
+                content: content,
+
+            };
+            benefits.push(myBenefits);
+            addToLocalSotrage(benefits);
+        }
+
+        function addToLocalSotrage(){
+            localStorage.setItem('benefits', JSON.stringify(benefits))
+        
+        }
+    
     }
 };
 
@@ -67,10 +88,6 @@ function removeItem (e){
 
 
 // Storing in LocalStorage
-function storeLocal(){
-    localStorage.setItem('title', title);
-    localStorage.setItem('content', content);
-};
 
 // Getting Localstorage value
 
