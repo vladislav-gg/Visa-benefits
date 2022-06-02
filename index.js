@@ -1,7 +1,3 @@
-
-
-
-
 function newItem() {
     
     let content = document.getElementById('inputContent').value;
@@ -24,7 +20,7 @@ function newItem() {
         
         // Storing in LocalStorage 
         storeLocal(title, content);
-        addToLocalSotrage();
+        addToLocalStorage(benefits)
 
         // Displaying on page
         div.appendChild(button);
@@ -63,13 +59,8 @@ function newItem() {
             };
             benefits.push(myBenefits);
             addToLocalSotrage(benefits);
-        }
-
-        function addToLocalSotrage(){
-            localStorage.setItem('benefits', JSON.stringify(benefits))
-        
-        }
-    
+        }    
+        console.log(benefits)
     }
 };
 
@@ -85,14 +76,12 @@ function removeItem (e){
     e.target.remove()
 }
 
+renderTodos(benefits)
 
-
-// Storing in LocalStorage
-
-// Getting Localstorage value
-
-// function renderLocal(){
-    
-
-
-// }
+function addToLocalStorage(benefits) {
+    localStorage.setItem('benefits', JSON.stringify(benefits));
+    renderTodos(benefits);
+}
+getFromLocalStorage()
+toggle(id)
+deleteTodo(id)
