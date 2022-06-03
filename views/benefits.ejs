@@ -31,21 +31,34 @@
 				<h1>The list of VISA benefits::</h1>
 			</div>
 			<div class="add-bar">
-				<h2>Add a benefit below</h2>
-				<input type="text" id="inputTitle" placeholder="Title" name="title" />
-				<textarea
-					id="inputContent"
-					placeholder="Content"
-					name="content"
-				></textarea>
-				<button type="button" onclick="newItem()" class="addBtn">Add</button>
+				<form method="POST" action="/">
+					<h2>Add a benefit below</h2>
+					<input type="text" id="inputTitle" placeholder="Title" name="title" />
+					<textarea
+						id="inputContent"
+						placeholder="Content"
+						name="content"
+					></textarea>
+					<button type="submit" class="addBtn">Add</button>
+				</form>
 			</div>
 
 			<div class="element-wrapper">
-				<!-- <button class="collapsible" type='button'></button>
-                    <div class="content">
-                        <ul class='list'></ul>
-                    </div> -->
+				<button class="collapsible" type="button"></button>
+				<div class="content">
+					<ul class="list">
+						<% visaTask.forEach(tasks => { %>
+						<li class="list-item">
+							<details>
+								<summary class="todo-list-item-name">
+									<%= tasks.content %>
+								</summary>
+								<p class="todo-list-item-name"><%= tasks.title %></p>
+							</details>
+						</li>
+						<% }) %>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

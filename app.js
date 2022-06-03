@@ -33,8 +33,10 @@ app.post("/", async (req, res) => {
 		title: req.body.title,
 		content: req.body.content,
 	});
+
 	try {
 		await visaTask.save();
+		console.log("success");
 		res.redirect("/");
 	} catch (err) {
 		console.log(err);
