@@ -43,23 +43,16 @@
 				</form>
 			</div>
 
-			<div class="element-wrapper">
-				<button class="collapsible" type="button"></button>
-				<div class="content">
-					<ul class="list">
-						<% visaTask.forEach(tasks => { %>
-						<li class="list-item">
-							<details>
-								<summary class="todo-list-item-name">
-									<%= tasks.content %>
-								</summary>
-								<p class="todo-list-item-name"><%= tasks.title %></p>
-							</details>
-						</li>
-						<% }) %>
-					</ul>
-				</div>
-			</div>
+			<ul class="list">
+				<% visaTask.forEach(tasks => { %>
+				<li class="">
+					<details class="item-style">
+						<summary class="item-style"><%= tasks.title %></summary>
+						<p class="p-style"><%= tasks.content %></p>
+					</details>
+				</li>
+				<% }) %>
+			</ul>
 		</div>
 	</div>
 </body>

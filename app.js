@@ -44,6 +44,31 @@ app.post("/", async (req, res) => {
 	}
 });
 
+// UPDATE METHOD
+app
+	.route("/edit/:id")
+	.get((req, res) => {
+		const id = req.params.id;
+		VisaTask.find({}, (err, tasks) => {
+			res.render("benefitsEdit.ejs", { visaTask: tasks, idTask: id });
+		});
+	})
+	.post((req, res) => {
+		const id = req.params.id;
+		VisaTask.findByIdAndUpdate(id, { content: req.body.title }, (err) => {
+			if (err) return res.send(500, err);
+			res.redirect("/");
+		});
+	});
+
+app.route("/remove/:id").get((req, res) => {
+	const id = req.params.id;
+	VisaTask.findByIdAndRemove(id, (err) => {
+		if (err) return res.send(500, err);
+		res.redirect("/");
+	});
+});
+
 app.listen(port, () => {
 	console.log("The server is running");
 });
