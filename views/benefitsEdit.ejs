@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Visa benefits</title>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link
+		rel="stylesheet"
+		href="/static/stylesheets/styles.css"
+		type="text/css"
+	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+		rel="stylesheet"
+	/>
+</head>
+<body>
+	<div class="main-wrapper">
+		<div class="content-wrapper">
+			<div class="title">
+				<h1>The list of VISA benefits::</h1>
+			</div>
+			<div class="add-bar">
+				<form method="POST" action="">
+					<h2>Add a benefit below</h2>
+					<input type="text" id="inputTitle" placeholder="Title" name="title" />
+					<textarea
+						id="inputContent"
+						placeholder="Content"
+						name="content"
+					></textarea>
+					<button type="submit" class="addBtn">Add</button>
+				</form>
+			</div>
+
+			<ul class="list">
+				<% visaTask.forEach(task => { %> <% if(task._id == id) { %>
+				<li class="">
+					<form action="/edit/<%=task._id %>" method="POST">
+						<details class="item-style">
+							<summary class="item-style"><%= task.title %></summary>
+							<p class="p-style"><%= task.content %></p>
+						</details>
+						<button type="submit">Confirm</button>
+						<a href="/" class="cancel"> Cancel</a>
+					</form>
+				</li>
+
+				<% } else { %>
+				<li class="">
+					<details class="item-style">
+						<summary class="item-style"><%= task.title %></summary>
+						<p class="p-style"><%= task.content %></p>
+					</details>
+					<a href="/edit/<%= task._id %>" class="edit">
+						<span class="span_edit">Edit</span>
+					</a>
+					<a href="/remove/<%= task._id %>" class="remove">
+						<span class="span_remove">Remove</span>
+					</a>
+				</li>
+				<% } %> <%}) %>
+			</ul>
+		</div>
+	</div>
+</body>

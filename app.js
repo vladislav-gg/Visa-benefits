@@ -50,17 +50,18 @@ app
 	.get((req, res) => {
 		const id = req.params.id;
 		VisaTask.find({}, (err, tasks) => {
-			res.render("benefitsEdit.ejs", { visaTask: tasks, idTask: id });
+			res.render("benefitsEdit.ejs", { visaTask: tasks, id: id });
 		});
 	})
 	.post((req, res) => {
 		const id = req.params.id;
-		VisaTask.findByIdAndUpdate(id, { content: req.body.title }, (err) => {
+		VisaTask.findByIdAndUpdate(id, { content: req.body.content }, (err) => {
 			if (err) return res.send(500, err);
 			res.redirect("/");
 		});
 	});
 
+// REMOVE METHOD
 app.route("/remove/:id").get((req, res) => {
 	const id = req.params.id;
 	VisaTask.findByIdAndRemove(id, (err) => {
