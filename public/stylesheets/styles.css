@@ -4,22 +4,33 @@
 	margin: 0;
 	font-family: "Montserrat", Helvetica, sans-serif;
 }
+/* LAYOUT STYLINGS */
+.main {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 
 .main-wrapper {
-	position: relative;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
 }
 
 .content-wrapper {
+	width: 100%;
 	display: flex;
+	margin: auto;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 3rem;
 }
 
-.active,
-.collapsible:hover {
-	background-color: #90afc5;
+/* buttons and inputs stylings */
+.add-bar {
+	width: 70%;
+	float: left;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .title h1 {
@@ -29,34 +40,15 @@
 	margin-bottom: 2rem;
 }
 
-.add-bar {
-	width: 60rem;
-	float: left;
-	margin-bottom: 2rem;
-	display: flex;
-}
-
 #inputContent {
-	width: 60rem;
+	width: 70%;
 	height: 15em;
 	resize: both;
 }
 
 #inputTitle {
-	width: 60rem;
+	width: 100%;
 	height: 3rem;
-}
-
-.add-bar {
-	display: flex;
-	flex-direction: column;
-}
-
-.contentDiv {
-	font-size: 1rem;
-	color: black;
-	padding: 1rem;
-	background-color: #eee;
 }
 
 .addBtn {
@@ -116,12 +108,8 @@ textarea:focus {
 .container {
 	margin-top: 20px;
 }
-.list {
-	width: 60rem;
-}
 
 details {
-	border: none;
 	border-radius: 1px;
 	background: #ffffff;
 	border: 0 solid #e2e8f0;
@@ -150,10 +138,36 @@ details[open] summary {
 
 .p-style {
 	padding: 0 1.2em;
-	width: 100%;
+	width: 70%;
 	padding: 10px;
-	width: 100%;
 }
 .list {
 	list-style: none;
+	display: flex;
+}
+.item-style {
+	width: 60%;
+}
+.delete_task {
+	align-items: center;
+	background: #ffffff;
+	border: 0 solid #e2e8f0;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	box-sizing: border-box;
+	color: #1a202c;
+	display: inline-flex;
+	font-size: 1rem;
+	font-weight: 700;
+	width: 200px;
+	justify-content: center;
+	overflow-wrap: break-word;
+	padding: 10px;
+	text-decoration: none;
+	border-radius: 8px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	margin-left: 10px;
 }

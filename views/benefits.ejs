@@ -6,6 +6,10 @@
 	<title>Visa benefits</title>
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script
+		src="https://cdn.tiny.cloud/1/aak4i3z1lof0t7jlnsvox9esmg91o7kp0ly8ka6r7bcbdsxo/tinymce/6/tinymce.min.js"
+		referrerpolicy="origin"
+	></script>
 	<link
 		rel="stylesheet"
 		href="/static/stylesheets/styles.css"
@@ -25,34 +29,57 @@
 	/>
 </head>
 <body>
-	<div class="main-wrapper">
-		<div class="content-wrapper">
-			<div class="title">
-				<h1>The list of VISA benefits::</h1>
-			</div>
-			<div class="add-bar">
-				<form method="POST" action="/">
-					<h2>Add a benefit below</h2>
-					<input type="text" id="inputTitle" placeholder="Title" name="title" />
-					<textarea
-						id="inputContent"
-						placeholder="Content"
-						name="content"
-					></textarea>
-					<button type="submit" class="addBtn">Add</button>
-				</form>
-			</div>
+	<div class="main">
+		<div class="main-wrapper">
+			<div class="content-wrapper">
+				<div class="title">
+					<h1>The list of VISA benefits::</h1>
+				</div>
+				<div class="add-bar">
+					<form method="POST" action="/add/task">
+						<h2>Add a benefit below</h2>
+						<input
+							type="text"
+							id="inputTitle"
+							placeholder="Title"
+							name="title"
+						/>
+						<textarea
+							id="inputContent"
+							placeholder="Content"
+							name="content"
+						></textarea>
+						<button type="submit" class="addBtn">Add</button>
+					</form>
+				</div>
+				<div class="list">
+					<% visaTask.forEach(tasks => { %>
+					<div class="item-container">
+						<details>
+							<summary class="item-style"><%= tasks.title %></summary>
+							<p class="p-style"><%- tasks.content %></p>
+						</details>
+					</div>
+				</div>
+				<a class="delete_task" href="delete/task/<%=tasks._id %>">Remove</a>
 
-			<ul class="list">
-				<% visaTask.forEach(tasks => { %>
-				<li class="">
-					<details class="item-style">
-						<summary class="item-style"><%= tasks.title %></summary>
-						<p class="p-style"><%= tasks.content %></p>
-					</details>
-				</li>
 				<% }) %>
-			</ul>
+			</div>
 		</div>
 	</div>
+	<script>
+		tinymce.init({
+			selector: "textarea",
+			plugins:
+				"a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker",
+			toolbar:
+				"paste a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents",
+			toolbar_mode: "floating",
+			tinycomments_mode: "embedded",
+			tinycomments_author: "Author name",
+			paste_as_text: true,
+			statusbar: false,
+			elementpath: false,
+		});
+	</script>
 </body>
