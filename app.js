@@ -74,6 +74,6 @@ app.use(require("./routes/visaList"));
 // 	});
 // });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
 	console.log("The server is running");
 });
