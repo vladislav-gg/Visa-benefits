@@ -3,7 +3,7 @@ const router = require("express").Router();
 const VisaTaskModel = require("../models/visa");
 
 router
-	.get("visa-benefits.herokuapp.com", (req, res) => {
+	.get("/", (req, res) => {
 		VisaTaskModel.find({}, (err, task) => {
 			res.render("benefits", { visaTask: task });
 		});
