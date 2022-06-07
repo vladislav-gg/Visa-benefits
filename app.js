@@ -9,9 +9,12 @@ const mongoose = require("mongoose");
 const VisaTask = require("./models/visa");
 
 const password = process.env.MONGODB_PASSWORD;
-const uri = `mongodb+srv://klay:${password}@wikiapi.dd5mg.mongodb.net/VisaDB?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://klay:${password}@wikiapi.dd5mg.mongodb.net/VisaDB?retryWrites=true&w=majority`;
 mongoose
-	.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+	.connect(process.env.MONGODB_URI, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
 	.then(() => {
 		console.log("connected to db!");
 	});
