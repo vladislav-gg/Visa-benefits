@@ -27,56 +27,6 @@ app.use("/static", express.static("public"));
 
 app.use(require("./routes/visaList"));
 
-// // GET METHOD
-// app.get("/", (req, res) => {
-// 	VisaTask.find({}, (err, tasks) => {
-// 		res.render("benefits.ejs", { visaTask: tasks });
-// 	});
-// });
-
-// // Post motehod
-// app.post("/", async (req, res) => {
-// 	const visaTask = new VisaTask({
-// 		title: req.body.title,
-// 		content: req.body.content,
-// 	});
-
-// 	try {
-// 		await visaTask.save();
-// 		console.log("success");
-// 		res.redirect("/");
-// 	} catch (err) {
-// 		console.log(err);
-// 		res.redirect("/");
-// 	}
-// });
-
-// // UPDATE METHOD
-// app
-// 	.route("/edit/:id")
-// 	.get((req, res) => {
-// 		const id = req.params.id;
-// 		VisaTask.find({}, (err, tasks) => {
-// 			res.render("benefitsEdit.ejs", { visaTask: tasks, id: id });
-// 		});
-// 	})
-// 	.post((req, res) => {
-// 		const id = req.params.id;
-// 		VisaTask.findByIdAndUpdate(id, { content: req.body.content }, (err) => {
-// 			if (err) return res.send(500, err);
-// 			res.redirect("/");
-// 		});
-// 	});
-
-// // REMOVE METHOD
-// app.route("/remove/:id").get((req, res) => {
-// 	const id = req.params.id;
-// 	VisaTask.findByIdAndRemove(id, (err) => {
-// 		if (err) return res.send(500, err);
-// 		res.redirect("/");
-// 	});
-// });
-
 app.listen(process.env.PORT || port, () => {
 	console.log("The server is running");
 });
