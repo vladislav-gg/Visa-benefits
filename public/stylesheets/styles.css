@@ -12,23 +12,21 @@
 }
 
 .main-wrapper {
-	width: 1400px;
 	display: flex;
 	margin-top: 50px;
-	margin-left: 200px;
+	margin-bottom: 150px;
+	justify-content: center;
 }
 
 .content-wrapper {
-	width: 100%;
 	display: flex;
-
-	margin: auto;
 	flex-direction: column;
+	width: 1100px;
 }
 
 /* buttons and inputs stylings */
 .add-bar {
-	width: 70%;
+	width: 100%;
 	float: left;
 	margin-bottom: 2rem;
 	display: flex;
@@ -40,7 +38,6 @@
 	font-weight: 400;
 	font-size: 3rem;
 	margin-bottom: 2rem;
-	width: 100%;
 }
 
 #inputContent {
@@ -107,12 +104,13 @@ input:focus {
 textarea:focus {
 	outline: none;
 }
+.list {
+	display: flex;
+	flex-direction: column;
+}
 
 .container {
 	margin-top: 20px;
-}
-.list {
-	width: 70%;
 }
 
 details {
@@ -151,9 +149,11 @@ details[open] summary {
 
 .item-container {
 	list-style: none;
+	display: flex;
+	justify-content: space-between;
 }
 .item-style {
-	width: 100%;
+	width: 900px;
 }
 .delete_task {
 	align-items: center;

@@ -53,30 +53,30 @@
 					</form>
 				</div>
 				<div class="list">
-					<ul class="item-container">
-						<% visaTask.forEach(tasks => { %>
-						<details>
-							<summary class="item-style"><%= tasks.title %></summary>
-							<p class="p-style"><%- tasks.content %></p>
-						</details>
-					</li>
-				</ul>
-				<a class="delete_task" href="delete/task/<%=tasks._id %>">Remove</a>
-
-				<% }) %>
+					<div class="sub-list">
+						<div class="item-container">
+							<% visaTask.forEach(tasks => { %>
+							<details class="item-style">
+								<summary class=""><%= tasks.title %></summary>
+								<p class="p-style"><%- tasks.content %></p>
+							</details>
+							<a class="delete_task" href="delete/task/<%=tasks._id %>"
+								>Remove</a
+							>
+						</div>
+						<% }) %>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<script>
 		tinymce.init({
 			selector: "textarea",
-			plugins:
-				"a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker",
-			toolbar:
-				"paste a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents",
 			toolbar_mode: "floating",
 			tinycomments_mode: "embedded",
 			tinycomments_author: "Author name",
+			content_style: "body { min-height: 270px}",
 			paste_as_text: true,
 			statusbar: false,
 			elementpath: false,
