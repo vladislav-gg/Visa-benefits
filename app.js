@@ -10,7 +10,7 @@ const VisaTask = require("./models/visa");
 
 const password = process.env.MONGODB_PASSWORD;
 mongoose
-	.connect(process.env.MONGODB_URI, {
+	.connect(process.env.DATABASE_URL, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
