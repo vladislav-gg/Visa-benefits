@@ -150,7 +150,11 @@ details[open] summary {
 .item-container {
 	list-style: none;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
+}
+.sub-list {
+	display: flex;
 }
 .item-style {
 	width: 900px;
@@ -177,4 +181,5 @@ details[open] summary {
 	-webkit-user-select: none;
 	touch-action: manipulation;
 	margin-left: 10px;
+	max-height: 77px;
 }

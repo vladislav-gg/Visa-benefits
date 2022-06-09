@@ -56,15 +56,17 @@
 					<div class="sub-list">
 						<div class="item-container">
 							<% visaTask.forEach(tasks => { %>
-							<details class="item-style">
-								<summary class=""><%= tasks.title %></summary>
-								<p class="p-style"><%- tasks.content %></p>
-							</details>
-							<a class="delete_task" href="delete/task/<%=tasks._id %>"
-								>Remove</a
-							>
+							<div class="sub-list">
+								<details class="item-style">
+									<summary class=""><%= tasks.title %></summary>
+									<p class="p-style"><%- tasks.content %></p>
+								</details>
+								<a class="delete_task" href="delete/task/<%=tasks._id %>"
+									>Remove</a
+								>
+							</div>
+							<% }) %>
 						</div>
-						<% }) %>
 					</div>
 				</div>
 			</div>
