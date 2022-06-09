@@ -1,0 +1,4 @@
+{
+	"appService.defaultWebAppToDeploy": "/subscriptions/e3279e8c-d17c-49ad-9f81-252850ef124c/microsoft.web/sites/subscriptions/e3279e8c-d17c-49ad-9f81-252850ef124c/resourceGroups/vladislav/providers/Microsoft.Web/sites/visa-benefits",
+	"appService.deploySubpath": "."
+}

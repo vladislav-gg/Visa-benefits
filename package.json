@@ -10,7 +10,7 @@
 		"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
 	},
 	"engines": {
-		"node": "14.17.5"
+		"node": "16.13.0"
 	},
 	"repository": {
 		"type": "git",
