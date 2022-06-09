@@ -3,18 +3,18 @@ const router = require("express").Router();
 const VisaTaskModel = require("../models/visa");
 
 router
-	.get("/", async (req, res) => {
-		await VisaTaskModel.find({}, (err, task) => {
+	.get("/", (req, res) => {
+		VisaTaskModel.find({}, (err, task) => {
 			res.render("benefits", { visaTask: task });
 		});
 	})
-	.post("/add/task", async (req, res) => {
+	.post("/add/task", (req, res) => {
 		const { task } = req.body;
-		const newTask = await new VisaTaskModel({
+		const newTask = new VisaTaskModel({
 			title: req.body.title,
 			content: req.body.content,
 		});
-		await newTask
+		newTask
 			.save()
 			.then(() => {
 				console.log("added");
@@ -22,9 +22,9 @@ router
 			})
 			.catch((err) => console.log(err));
 	})
-	.get("/delete/task/:_id", async (req, res) => {
+	.get("/delete/task/:_id", (req, res) => {
 		const { _id } = req.params;
-		await VisaTaskModel.deleteOne({ _id })
+		VisaTaskModel.deleteOne({ _id })
 			.then(() => {
 				console.log("deleted");
 				res.redirect("/");
