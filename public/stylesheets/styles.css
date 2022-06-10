@@ -78,11 +78,14 @@
 }
 
 input::placeholder {
-	opacity: 40%;
+	opacity: 100%;
 }
 
 textarea::placeholder {
-	opacity: 40%;
+	opacity: 10%;
+}
+.data-mce-placeholder {
+	opacity: 10%;
 }
 
 input {
@@ -122,7 +125,7 @@ details {
 	box-sizing: border-box;
 	color: #1a202c;
 	display: inline-flex;
-	margin-bottom: 15px;
+	margin-bottom: 45px;
 	cursor: pointer;
 	padding: 25px;
 	font-size: 1.1rem;

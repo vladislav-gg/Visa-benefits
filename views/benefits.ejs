@@ -72,13 +72,15 @@
 			</div>
 		</div>
 	</div>
-	<script>
+	<script type="text/javascript">
 		tinymce.init({
 			selector: "textarea",
-			toolbar_mode: "floating",
 			tinycomments_mode: "embedded",
 			tinycomments_author: "Author name",
 			content_style: "body { min-height: 270px}",
+			toolbar:
+				"undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code",
+
 			paste_as_text: true,
 			statusbar: false,
 			elementpath: false,
